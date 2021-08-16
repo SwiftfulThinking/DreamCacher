@@ -53,7 +53,7 @@ cache.save(array: [Any], forKey: String)
 cache.save(bool: Bool, forKey: String)
 cache.save(string: String, forKey: String)
 ```
-- DreamCacher supports many Type, including images, audio/video urls, and Codable types.
+- DreamCacher supports many Types, including images, audio/video urls, and Codable types.
 - The save() function returns a Result.
 - Although there are convenience methods to save Any, it is recommended to use the explicit function for the Type you are saving when it is known. The Any initializers will attempt to find the correct file type but may fail.
 - Although DreamCacher supports Codable, it may be more efficient to store Codable types elsewhere, such as CoreData.
