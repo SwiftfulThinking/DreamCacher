@@ -125,5 +125,7 @@ Supported Platforms:
 Updates:
 - [x] Unit Tests for DreamCache.swift 
 - [ ] Unit Tests for DreamCacherInteractor.swift 
-- [ ] Asynchronous methods (background threads + NSFileCoordinator)
 - [ ] Add a 'priority' to instances of DreamCache to managing cache sizes more efficiently
+- [ ] Add configuration to save to other FileManager directories (not just .caches)
+- [ ] Add convenience method to delete a single cache entirely (currently only supports .deleteAllDreamCachers)
+- [ ] Asynchronous methods (background threads + NSFileCoordinator)
