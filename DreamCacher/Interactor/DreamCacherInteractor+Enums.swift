@@ -58,37 +58,30 @@ extension DreamCacherInteractor {
         init?(any: Any) {
             
             if let image = any as? UIImage {
-                print("Is image")
                 self = .jpg(image: image, compression: nil)
                 return
             }
 
             if let url = any as? URL {
-                print("Is url")
                 self = .any(any: url.path)
                 return
             }
                         
             if let array = any as? [Any], JSONSerialization.isValidJSONObject(any) {
-                print("Is arrr")
-
                 self = .anyArray(array: array)
                 return
             }
             
             if let data = any as? Data {
-                print("Is data")
                 self = .model(data: data)
                 return
             }
             
             if JSONSerialization.isValidJSONObject([any]) {
-                print("IS VALID JSON")
                 self = .any(any: any)
                 return
             }
             
-            print("IS NOT AVAIL")
             return nil
         }
                 

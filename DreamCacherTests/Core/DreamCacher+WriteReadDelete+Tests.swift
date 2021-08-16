@@ -195,7 +195,6 @@ class DreamCacher_WriteReadDelete_Tests: XCTestCase {
         let validOptions: [Any] = [string, bool, int, cgfloat, double, image, url1, url2]
         
         for option in validOptions {
-            print(option)
             
             // When
             let fileName: String = UUID().uuidString

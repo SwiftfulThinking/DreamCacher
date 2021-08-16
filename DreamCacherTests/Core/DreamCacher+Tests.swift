@@ -177,8 +177,7 @@ class DreamCacher_Tests: XCTestCase {
 
         // When
         for _ in 0..<100 {
-            let url = cache.save(imageJPG: image, forKey: UUID().uuidString)
-            print(url)
+            cache.save(imageJPG: image, forKey: UUID().uuidString)
         }
         
         // Then
@@ -295,10 +294,6 @@ class DreamCacher_Tests: XCTestCase {
         let fileName = UUID().uuidString
         let saved1 = cache.save(bool: true, forKey: fileName)
         let cached1 = cache.bool(forKey: fileName)
-        
-        if case .success(let url) = saved1 {
-            print(url)
-        }
         
         let deleted = cache.deleteCache()
         let cached2 = cache.bool(forKey: fileName)
