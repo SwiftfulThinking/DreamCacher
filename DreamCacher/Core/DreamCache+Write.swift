@@ -33,7 +33,7 @@ extension DreamCache {
     }
     
     /// Save MP3 image to cache.
-    @discardableResult public func save(videoMP3AtUrl url: URL, forKey key: String) -> Result<URL, Error> {
+    @discardableResult public func save(audioMP3AtUrl url: URL, forKey key: String) -> Result<URL, Error> {
         DreamCacherInteractor.write(key: key, file: .mp3(url: url), cache: self)
     }
     
