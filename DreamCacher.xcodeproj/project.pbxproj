@@ -137,9 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				02B5858026CA5BDD00E06E25 /* DreamCache.swift */,
-				02B5858126CA5BDD00E06E25 /* DreamCache+Delete.swift */,
-				02B5858226CA5BDD00E06E25 /* DreamCache+Read.swift */,
 				02B5858326CA5BDD00E06E25 /* DreamCache+Write.swift */,
+				02B5858226CA5BDD00E06E25 /* DreamCache+Read.swift */,
+				02B5858126CA5BDD00E06E25 /* DreamCache+Delete.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -157,11 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				02B5858E26CA5BFA00E06E25 /* DreamCacherInteractor.swift */,
+				02B5858F26CA5BFA00E06E25 /* DreamCacherInteractor+Write.swift */,
+				02B5858C26CA5BFA00E06E25 /* DreamCacherInteractor+Read.swift */,
 				02B5858D26CA5BFA00E06E25 /* DreamCacherInteractor+Delete.swift */,
 				02B5858B26CA5BFA00E06E25 /* DreamCacherInteractor+Enums.swift */,
 				02B5858A26CA5BFA00E06E25 /* DreamCacherInteractor+Model.swift */,
-				02B5858C26CA5BFA00E06E25 /* DreamCacherInteractor+Read.swift */,
-				02B5858F26CA5BFA00E06E25 /* DreamCacherInteractor+Write.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
