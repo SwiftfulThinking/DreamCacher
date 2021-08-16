@@ -3,17 +3,19 @@
 
 ### Overview
 
-DreamCacher uses the FileManager to create a local cache on the device. You may use the default cache or create your own instances. All instances of DreamCache are limited by an aggregate cache size limit, however, the instance can also have it's own sub-limit. All caches are automatically managed and will remove the lease recently used elements until space is available.
+DreamCacher uses the FileManager to create a local cache on the device. You may use the default cache or create your own instances. All instances of DreamCache are limited by an aggregate cache size limit, however, the instance can also have its own sub-limit. All caches are automatically managed and will remove the least recently used elements until space is available.
 
 ## Installation
 
-Firstly, import the package to your file.
+**Firstly, import the package to your file.**
 
 ```swift
 import DreamCacher
 ```
 
-Then, optionally update the default configuration:
+
+
+**Then, optionally update the default configuration:**
 ```swift
 DreamCache.updateConfiguration(maximumAllowedSizeInMB: 10, isPrintEnabled: true)
 ```
@@ -21,9 +23,11 @@ DreamCache.updateConfiguration(maximumAllowedSizeInMB: 10, isPrintEnabled: true)
 - By calling DreamCache.updateConfiguration, you will set an aggregate size limit for all instances of DreamCache.
 - You may allow printing for debugging purposes. However, it is recommended to disable printing in production.
 
+
+
 ## Usage
 
-There is a default cache that you can immediately use:
+**There is a default cache that you can immediately use:**
 
 ```swift
 let cache = DreamCache.shared
@@ -31,7 +35,9 @@ let cache = DreamCache.shared
 - This cache will have the same maximum size limit as the aggregate cache (set by calling DreamCache.updateConfiguration() ).
 - This cache is named "default".
 
-Or you can create your own instances of DreamCache:
+
+
+**Or you can create your own instances of DreamCache:**
 ```swift
 let cache = DreamCache(name: "MyNewCache")
 let cache = DreamCache(name: "MyNewCache", maximumAllowedSizeInMB: 10)
@@ -40,7 +46,9 @@ let cache = DreamCache(name: "MyNewCache", maximumAllowedSizeInMB: 10)
 - Instances of DreamCache can additionally have their own sub-limit, set within the initializer.
 - New instances of DreamCache should have a valid name. Do not initialize with a blank string "" or the word "default", which is already in use.
 
-Start saving items to the cache:
+
+
+**Start saving items to the cache:**
 ```swift
 cache.save(imageJPG: UIImage, forKey: String)
 cache.save(imagePNG: UIImage, forKey: String)
@@ -57,9 +65,11 @@ cache.save(string: String, forKey: String)
 - The save() function returns a Result.
 - Although there are convenience methods to save Any, it is recommended to use the explicit function for the Type you are saving when it is known. The Any initializers will attempt to find the correct file type but may fail.
 - Although DreamCacher supports Codable, it may be more efficient to store Codable types elsewhere, such as CoreData.
-- Although DreamCacher supprots Strings and Bools, it may be more efficient to store simple types elsewhere, such as UserDefaults.
+- Although DreamCacher supports Strings and Bools, it may be more efficient to store simple types elsewhere, such as UserDefaults.
 
-Read saved items from the cache:
+
+
+**Read saved items from the cache:**
 ```swift
 let image = cache.image(forKey: String)
 let videoURL = cache.video(forKey: String)
@@ -73,13 +83,17 @@ let string = cache.string(forKey: String)
 ```
 - Returned Types are all optional. The function may return nil if the item doesn't exist or the item is not the requested Type.
 
-The cache will manage itself based on the instance cache size as well as the aggregate cache size. However, you may also manually delete items:
+
+
+**The cache will manage itself based on the instance cache size as well as the aggregate cache size. However, you may also manually delete items:**
 ```swift
 cache.delete(forKey: String)
 ```
 - The cache will manage itself based on the instance cache size as well as the aggregate cache size.
 
-Other convenience methods:
+
+
+**Other convenience methods:**
 
 ```swift
 /// Name used for this instance of DreamCache.
