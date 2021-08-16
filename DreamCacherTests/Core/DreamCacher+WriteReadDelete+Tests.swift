@@ -94,7 +94,7 @@ class DreamCacher_WriteReadDelete_Tests: XCTestCase {
         guard let url: URL = .randomMP3() else { return }
 
         // When
-        let saved = cache.save(videoMP3AtUrl: url, forKey: fileName)
+        let saved = cache.save(audioMP3AtUrl: url, forKey: fileName)
         let cached = cache.audio(forKey: fileName)
         let deleted = cache.delete(forKey: fileName)
         let cachedNil = cache.audio(forKey: fileName)
