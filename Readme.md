@@ -85,11 +85,11 @@ let string = cache.string(forKey: String)
 
 
 
-**The cache will manage itself based on the instance cache size as well as the aggregate cache size.**
-**However, you may also manually delete items:**
+**Manually delete items if needed:**
 ```swift
 cache.delete(forKey: String)
 ```
+- This is a convenience method but does not have to be called. The cache will manage itself based on the instance cache size as well as the aggregate cache size.
 
 
 **Other convenience methods:**
