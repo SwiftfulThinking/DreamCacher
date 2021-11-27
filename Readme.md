@@ -1,6 +1,8 @@
 
 # Welcome to DreamCacher
 
+*** NOTE: THIS FRAMEWORK IS A WORK IN PROGRESS AND WILL LIKELY CHANGEIN FUTURE UPDATES ***
+
 ### Overview
 
 DreamCacher uses the FileManager to create a local cache on the device. You may use the default cache or create your own instances. All instances of DreamCache are limited by an aggregate cache size limit, however, the instance can also have its own sub-limit. All caches are automatically managed and will remove the least recently used elements until space is available.
